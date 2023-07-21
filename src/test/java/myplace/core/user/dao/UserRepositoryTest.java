@@ -33,7 +33,6 @@ public class UserRepositoryTest {
                 .name("daniel")
                 .email("kbry12@naver.com")
                 .password("1234")
-                .createdAt(timestamp)
                 .build());
 
         List<User> userList = userRepository.findAll();
