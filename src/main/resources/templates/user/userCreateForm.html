@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <div class="container">
-    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+    <form action = "user/signup" th:action="@{/user/signup}" th:object="${userDto}" method="post">
         <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
             <div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
         </div>
