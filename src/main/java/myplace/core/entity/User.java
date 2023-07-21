@@ -1,9 +1,6 @@
 package myplace.core.entity;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +9,7 @@ import java.util.Date;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 @Getter
+@Builder
 @Table(name = "users")
 public class User {
     @Id
