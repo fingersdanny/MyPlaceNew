@@ -1,7 +1,7 @@
 package myplace.core.user.dto;
 
 import lombok.*;
-import myplace.core.user.dao.User;
+import myplace.core.user.domain.User;
 
 import java.util.Date;
 

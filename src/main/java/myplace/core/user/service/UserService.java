@@ -2,7 +2,7 @@ package myplace.core.user.service;
 
 import lombok.AllArgsConstructor;
 import myplace.core.user.dto.UserDto;
-import myplace.core.user.repository.UserRepository;
+import myplace.core.user.dao.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

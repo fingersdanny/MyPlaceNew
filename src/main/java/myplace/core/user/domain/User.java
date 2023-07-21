@@ -1,4 +1,4 @@
-package myplace.core.user.dao;
+package myplace.core.user.domain;
 
 import lombok.*;
 

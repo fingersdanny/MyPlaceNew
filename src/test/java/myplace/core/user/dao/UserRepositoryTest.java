@@ -1,6 +1,6 @@
-package myplace.core.user.repository;
+package myplace.core.user.dao;
 
-import myplace.core.user.dao.User;
+import myplace.core.user.domain.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
-package myplace.core.user.repository;
+package myplace.core.user.dao;
 
-import myplace.core.user.dao.User;
+import myplace.core.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
