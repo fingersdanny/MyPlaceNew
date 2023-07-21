@@ -3,6 +3,8 @@ package myplace.core.user.dto;
 import lombok.*;
 import myplace.core.user.domain.User;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Getter
@@ -11,11 +13,18 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserDto {
     private Long id;
+    @Size(min = 3, max = 25)
+    @NotEmpty(message = "이름은 필수항목입니다.")
     private String name;
+
+    @NotEmpty(message = "닉네임은 필수항목입니다.")
     private String username;
+
+    @NotEmpty(message = "비밀번호는 필수항목입니다.")
     private String password;
+
+    @NotEmpty(message = "이메일은 필수항목입니다.")
     private String email;
-    private Date createdAt;
 
     @Builder
     public UserDto(Long id, String name, String username, String password, String email, Date createdAt) {
@@ -24,7 +33,6 @@ public class UserDto {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.createdAt = createdAt;
     }
 
     public User toEntity() {
@@ -34,7 +42,6 @@ public class UserDto {
                 .username(username)
                 .password(password)
                 .email(email)
-                .createdAt(createdAt)
                 .build();
         return user;
     }
