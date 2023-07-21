@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Builder
 @Table(name = "users")
-public class User {
+public class User extends UserTimeEntity {
     @Id
     @GeneratedValue
     //@GeneratedValue(strategy=GenerationType.IDENTITY)
