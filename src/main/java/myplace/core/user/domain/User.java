@@ -3,7 +3,6 @@ package myplace.core.user.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -14,7 +13,6 @@ import java.util.Date;
 public class User extends UserTimeEntity {
     @Id
     @GeneratedValue
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     private String name;
