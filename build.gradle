@@ -37,6 +37,13 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
 }
 
+processResources.dependsOn('copySecret')
+
+task copySecret(type : Copy) {
+    from '../MyPlaceSecurity/application.properties'
+    into 'src/main/resources'
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
