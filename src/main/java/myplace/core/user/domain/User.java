@@ -1,6 +1,7 @@
 package myplace.core.user.domain;
 
 import lombok.*;
+import myplace.core.commons.domain.TimeEntity;
 
 import javax.persistence.*;
 
