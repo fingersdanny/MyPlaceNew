@@ -22,18 +22,18 @@ public class UserRepositoryTest {
     @Test
     @DisplayName("유저 생성 확인")
     public void create_user() {
-        Long datetime = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(datetime);
+        String name = "daniel";
+        String email = "kbry12@naver.com";
+
         userRepository.save(User.builder()
                 .id(1L)
                 .username("dkinda")
-                .name("daniel")
-                .email("kbry12@naver.com")
+                .name(name)
+                .email(email)
                 .password("1234")
                 .build());
 
-        List<User> userList = userRepository.findAll();
-
+        List<User> userList = userRepository.findDistinctUserByEmailAndName(email, name);
         User user = userList.get(0);
         assertThat(user.getName()).isEqualTo("daniel");
         assertThat(user.getEmail()).isEqualTo("kbry12@naver.com");

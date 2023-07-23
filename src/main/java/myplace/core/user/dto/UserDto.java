@@ -3,6 +3,7 @@ package myplace.core.user.dto;
 import lombok.*;
 import myplace.core.user.domain.User;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -23,6 +24,7 @@ public class UserDto {
     @NotEmpty(message = "비밀번호는 필수항목입니다.")
     private String password;
 
+    @Email
     @NotEmpty(message = "이메일은 필수항목입니다.")
     private String email;
 
