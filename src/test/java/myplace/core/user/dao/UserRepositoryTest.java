@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -17,11 +18,7 @@ public class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
 
-    @AfterEach
-    public void cleanup(){
-        userRepository.deleteAll();
-    }
-
+    @Transactional
     @Test
     @DisplayName("유저 생성 확인")
     public void create_user() {

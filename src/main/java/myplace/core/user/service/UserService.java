@@ -11,10 +11,11 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
+@Transactional
 public class UserService {
     private UserRepository userRepository;
 
-    @Transactional
+
     public Long saveUser(UserDto userDto) {
         return userRepository.save(userDto.toEntity()).getId();
     }
