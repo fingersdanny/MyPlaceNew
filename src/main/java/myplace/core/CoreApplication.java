@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@PropertySource("file:C:/Users/finge/IdeaProjects/core/MyPlaceSecurity/application.properties")
+@PropertySource("file:C:/Users/finge/IdeaProjects/core/MyPlaceAuth/application-main.yml")
 @EnableJpaAuditing
 @SpringBootApplication
 public class CoreApplication {
