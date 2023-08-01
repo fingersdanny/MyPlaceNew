@@ -14,14 +14,15 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserDto {
     private Long id;
-    @Size(min = 3, max = 25)
     @NotEmpty(message = "이름은 필수항목입니다.")
     private String name;
 
+    @Size(min = 4, message = "닉네임은 4글자 이상이어야 합니다")
     @NotEmpty(message = "닉네임은 필수항목입니다.")
     private String username;
 
     @NotEmpty(message = "비밀번호는 필수항목입니다.")
+    @Size(min = 8, max = 20, message = "비밀번호는 8자리 이상이어야 합니다.")
     private String password;
 
     @Email
