@@ -1,9 +1,9 @@
 package myplace.core.user.domain;
 
 import lombok.*;
+import myplace.core.commons.domain.TimeEntity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -11,10 +11,9 @@ import java.util.Date;
 @Getter
 @Builder
 @Table(name = "users")
-public class User extends UserTimeEntity {
+public class User extends TimeEntity {
     @Id
     @GeneratedValue
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     private String name;

@@ -1,4 +1,4 @@
-package myplace.core.user.domain;
+package myplace.core.commons.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class UserTimeEntity {
+public abstract class TimeEntity {
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
