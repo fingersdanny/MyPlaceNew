@@ -12,11 +12,12 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
+@Transactional
 public class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
 
-    @Transactional
+
     @Test
     @DisplayName("유저 생성 확인")
     public void create_user() {
