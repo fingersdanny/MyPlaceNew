@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findDistinctUserByEmailAndName(String email, String name);
+    List<User> findDistinctUserByEmailAndUsername(String email, String username);
 
     User findDistinctUserByName(String name);
 

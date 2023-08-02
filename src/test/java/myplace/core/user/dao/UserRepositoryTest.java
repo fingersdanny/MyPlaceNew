@@ -21,20 +21,20 @@ public class UserRepositoryTest {
     @Test
     @DisplayName("유저 생성 확인")
     public void create_user() {
-        String name = "daniel";
+        String username = "dkinda";
         String email = "kbry12@naver.com";
 
         userRepository.save(User.builder()
                 .id(1L)
-                .username("dkinda")
-                .name(name)
+                .username(username)
+                .name("daniel")
                 .email(email)
                 .password("1234")
                 .build());
 
-        List<User> userList = userRepository.findDistinctUserByEmailAndName(email, name);
+        List<User> userList = userRepository.findDistinctUserByEmailAndUsername(email, username);
         User user = userList.get(0);
-        assertThat(user.getName()).isEqualTo("daniel");
+        assertThat(user.getUsername()).isEqualTo(username);
         assertThat(user.getEmail()).isEqualTo("kbry12@naver.com");
     }
 }
