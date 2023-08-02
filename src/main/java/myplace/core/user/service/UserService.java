@@ -1,9 +1,9 @@
 package myplace.core.user.service;
 
 import lombok.AllArgsConstructor;
+import myplace.core.user.dao.UserRepository;
 import myplace.core.user.domain.User;
 import myplace.core.user.dto.UserDto;
-import myplace.core.user.dao.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,7 +15,6 @@ import java.util.List;
 public class UserService {
     private UserRepository userRepository;
 
-
     public Long saveUser(UserDto userDto) {
         return userRepository.save(userDto.toEntity()).getId();
     }
@@ -23,4 +22,7 @@ public class UserService {
     public List<User> findUsers() {
         return userRepository.findAll();
     }
+
+    public User findOne(Long userId){
+        return userRepository.findDistinctById(userId);}
 }
