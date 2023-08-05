@@ -1,6 +1,7 @@
-package myplace.core.place.dto;
+package myplace.core.commons.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 import myplace.core.place.domain.Place;
 
@@ -8,7 +9,8 @@ import myplace.core.place.domain.Place;
 @Getter
 @Setter
 @ToString
-public class PlaceSaveDto {
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+public class PlaceSearchDto {
     private Long id;
 
     private String placeName;
@@ -33,7 +35,8 @@ public class PlaceSaveDto {
 
     private String distance;
 
-    public PlaceSaveDto(Long id, String placeName, String categoryName, String categoryGroupCode, String categoryGroupName, String phone, String addressName, String roadAddressName, String x, String y, String placeUrl, String distance) {
+    @Builder
+    public PlaceSearchDto(Long id, String placeName, String categoryName, String categoryGroupCode, String categoryGroupName, String phone, String addressName, String roadAddressName, String x, String y, String placeUrl, String distance) {
         this.id = id;
         this.placeName = placeName;
         this.categoryName = categoryName;
@@ -48,7 +51,7 @@ public class PlaceSaveDto {
         this.distance = distance;
     }
 
-    @Builder
+
 
 
     public Place toEntity() {
