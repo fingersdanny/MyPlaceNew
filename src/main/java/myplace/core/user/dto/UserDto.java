@@ -1,6 +1,7 @@
 package myplace.core.user.dto;
 
 import lombok.*;
+import myplace.core.commons.domain.TimeEntity;
 import myplace.core.user.domain.User;
 
 import javax.validation.constraints.*;
@@ -9,7 +10,7 @@ import javax.validation.constraints.*;
 @Setter
 @ToString
 @NoArgsConstructor
-public class UserDto {
+public class UserDto extends TimeEntity {
     private Long id;
     @NotBlank(message = "이름은 필수항목입니다.")
     private String name;
