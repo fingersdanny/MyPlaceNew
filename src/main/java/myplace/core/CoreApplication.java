@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 @EnableFeignClients
 @SpringBootApplication
+@PropertySource(value = "file:MyPlaceAuth/application.properties")
 public class CoreApplication {
 
     public static void main(String[] args) {
