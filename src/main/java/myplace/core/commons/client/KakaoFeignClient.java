@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "kakaoClient", url = "https://dapi.kakao.com")
 public interface KakaoFeignClient {
-
-    @GetMapping("/v2/local/search/address.json")
-    KakaoResponseDto findPlacesByAddress(@RequestHeader("Authorization") String apiKey,
-                                          @RequestParam("query") String query);
-
     @GetMapping("/v2/local/search/category.json")
     KakaoResponseDto findPlacesByCategory(@RequestHeader("Authorization") String apiKey,
                                           @RequestParam("category_group_code") String categoryGroupCode,
