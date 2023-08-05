@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @PropertySource("file:C:/Users/finge/IdeaProjects/core/MyPlaceAuth/application-main.yml")
 @EnableJpaAuditing
 @SpringBootApplication
+@PropertySource(value = "file:MyPlaceAuth/application.properties")
 public class CoreApplication {
 
     public static void main(String[] args) {
