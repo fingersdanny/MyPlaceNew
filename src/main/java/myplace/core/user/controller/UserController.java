@@ -1,4 +1,4 @@
-package myplace.core.controller;
+package myplace.core.user.controller;
 
 import lombok.AllArgsConstructor;
 import myplace.core.user.domain.User;

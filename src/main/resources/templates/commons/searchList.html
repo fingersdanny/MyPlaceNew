@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3 border-bottom">
+  <div>
+    <h4>검색 결과</h4>
+  </div>
+<div/>
+<div class="container">
+  <div>
+    <table class="table">
+      <thead class="table-responsive">
+      <tr>
+        <th>이름</th>
+        <th>도로명주소</th>
+        <th>전화번호</th>
+        <th>카테고리</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="place : ${places}">
+        <td th:text="${place.placeName}"></td>
+        <td th:text="${place.roadAddressName}"></td>
+        <td th:text="${place.phone}"></td>
+        <td th:text="${place.categoryGroupName}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- /container -->
+</html>
